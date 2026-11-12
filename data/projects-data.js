@@ -1,0 +1,139 @@
+/* 自 data/projects.json 產生：修改 JSON 後請同步此檔 */
+window.PROJECTS_FALLBACK = [
+  {
+    "id": "interview-coach",
+    "title": "AI 面試模擬系統｜林教練",
+    "category": "AI / LLM",
+    "summary": "自訂應徵職位、面試官風格與題型，以逐題問答及講評練習面試表達。",
+    "description": "以 AI Suite 串接 Groq 語言模型並使用 Gradio 建立面試練習介面。使用者可填寫應徵職位、背景、面試官風格與練習題型，依照回覆繼續追問，最後進入反問及教練講評流程。",
+    "motivation": "除了事先準備回答，面試練習也需要面對追問並清楚說明個人經驗，因此設計可依職位與使用者回答調整的面試陪練工具。",
+    "features": [
+      "自由輸入應徵職位，不限定工程領域",
+      "選擇面試官風格及練習題型",
+      "一次一個主要問題，依回答持續追問",
+      "練習反問面試官及結束後的教練講評",
+      "使用 Gradio 介面與對話狀態管理"
+    ],
+    "technologies": [
+      "Python",
+      "AI Suite",
+      "Groq",
+      "Gradio",
+      "LLM"
+    ],
+    "results": "Notebook 包含模型呼叫、面試流程、Gradio 介面及啟動程式；此作品集未實際啟動 API 或驗證公開展示連結。",
+    "lessonsLearned": "待補充個人開發心得。",
+    "image": "assets/images/interview-coach-screenshot.webp",
+    "imageAlt": "AI 面試模擬系統｜林教練實際操作介面截圖",
+    "demoUrl": "",
+    "githubUrl": "",
+    "status": "completed",
+    "featured": true,
+    "imageType": "screenshot"
+  },
+  {
+    "id": "pet-rag-advisor",
+    "title": "毛孩新手村｜AI 貓狗飼養顧問",
+    "category": "RAG",
+    "summary": "以貓狗新手飼養文件建立向量知識庫，結合檢索與生成回答，提供可追溯的參考來源。",
+    "description": "同一專案分為兩個 Notebook 階段：RAG01 解析飼養文件、建立 Embedding 與 FAISS 索引並輸出知識庫；RAG02 載入索引、檢索相關文件，再透過 Groq 模型生成繁體中文回答，於 Gradio 顯示來源和文件內容。",
+    "motivation": "希望針對初次飼養貓狗時常見的用品、飲食與照護問題，提供以整理過的飼養文件為基礎的問答方式，而不是只依靠模型本身的知識。",
+    "features": [
+      "RAG01：清理 TXT 文件並擷取標題、正文與來源資訊",
+      "使用 EmbeddingGemma 2 產生向量，FAISS IndexFlatIP 建立檢索索引",
+      "匯出索引、文件、ID 對應與設定至知識庫 ZIP",
+      "RAG02：載入並核對知識庫，檢索相關文件",
+      "以 Groq 模型生成回答、顯示來源與檢索文件",
+      "Gradio 問答介面及純 LLM／RAG 比較程式"
+    ],
+    "technologies": [
+      "Python",
+      "EmbeddingGemma 2",
+      "Sentence Transformers",
+      "FAISS",
+      "AI Suite",
+      "Groq",
+      "Gradio",
+      "RAG"
+    ],
+    "results": "兩份 Notebook 包含建庫、索引驗證、檢索、生成問答及 Gradio 介面的程式；原始飼養資料 ZIP 和持久展示網址未在本次網站提供。",
+    "lessonsLearned": "檢索相似度並不等於答案正確，回答仍需與引用文件逐項核對。",
+    "image": "assets/images/pet-rag-advisor-screenshot.webp",
+    "imageAlt": "毛孩新手村｜AI 貓狗飼養顧問實際操作介面截圖",
+    "demoUrl": "",
+    "githubUrl": "",
+    "status": "completed",
+    "featured": true,
+    "imageType": "screenshot"
+  },
+  {
+    "id": "ai-trip-reflection",
+    "title": "AI 智慧行程規劃與反思助手",
+    "category": "AI Agent",
+    "summary": "以 Planner、Reviewer、Reviser 三階段流程規劃旅遊行程，檢查合理性並產生修正版。",
+    "description": "使用者輸入出發地、目的地、時間、人數、預算、交通方式與旅遊偏好後，Reflection Agent 依序產生行程草案、檢查時間與預算等限制，最後根據檢查結果修正行程。Gradio 介面分別呈現初版、反思報告及改善版本。",
+    "motivation": "一次生成的旅遊行程可能忽略時間、交通與預算限制，因此加入獨立檢查與修正階段，使行程在生成後仍能接受檢視。",
+    "features": [
+      "輸入地點、日期、人數、預算、交通與偏好",
+      "Planner 產生初步旅遊行程",
+      "Reviewer 檢查時間、交通、預算與偏好等條件",
+      "Reviser 參考反思報告修正初稿",
+      "Gradio 分頁展示初稿、檢查報告與修正版",
+      "程式包含衝突建議測試與 Token／API 錯誤處理"
+    ],
+    "technologies": [
+      "Python",
+      "AI Suite",
+      "Groq",
+      "Gradio",
+      "Reflection Agent",
+      "LLM"
+    ],
+    "results": "Notebook 已定義三階段流程、整合函式及 Gradio 介面；外部交通資料與店家營業資訊仍須另外核實，未對 AI 輸出正確性做保證。",
+    "lessonsLearned": "反思產生的建議可能仍有錯誤，需要再核對現實中的交通、時間及營業資訊。",
+    "image": "assets/images/ai-trip-reflection-screenshot.webp",
+    "imageAlt": "AI 智慧行程規劃與反思助手實際操作介面截圖",
+    "demoUrl": "",
+    "githubUrl": "",
+    "status": "completed",
+    "featured": false,
+    "imageType": "screenshot"
+  },
+  {
+    "id": "packing-checklist",
+    "title": "出門準備檢查助手（Ready to Go）",
+    "category": "Web App",
+    "summary": "依上課、上班、旅行等情境建立出門清單，透過逐項勾選、備註與準備進度，確認需要攜帶的物品。",
+    "description": "以單一 HTML 檔案整合樣式與互動程式的出門準備工具。使用者可從情境模板挑選物品，建立並管理多份清單，自訂物品名稱與備註，查看準備進度及尚未完成項目。另提供本機使用者分頁、頭像、插畫配色與背景圖片設定，並以 localStorage 保存資料。",
+    "motivation": "將不同出門情境需要攜帶的物品整理成可重複使用的清單，搭配備註與逐項確認，協助使用者在出發前掌握準備狀況。",
+    "features": [
+      "提供上課、上班、面試、旅行／過夜、運動、日常外出及空白自訂模板",
+      "建立清單時可逐項選取模板物品，支援全選與全部取消",
+      "新增、切換、重新命名及刪除多份清單",
+      "新增、編輯及刪除物品，並保存個別備註與勾選狀態",
+      "顯示完成件數、完成百分比、進度條與尚未準備項目",
+      "重新檢查時保留物品與備註，亦可還原模板物品",
+      "管理多個本機使用者分頁，各自保存清單、暱稱、頭像與背景設定",
+      "提供七種 SVG 插畫、十種配色及自訂背景圖片，使用 Canvas 縮圖處理上傳圖片",
+      "以 localStorage 自動保存資料，包含舊版資料轉換與儲存失敗提示",
+      "包含響應式排版、使用者與清單分頁的鍵盤切換，以及 ARIA 標記"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Web Storage API（localStorage）",
+      "Canvas API",
+      "SVG"
+    ],
+    "results": "原始碼已實作情境模板、多清單與本機使用者管理、物品勾選、進度統計、背景設定及本機資料保存。已通過 JavaScript 語法檢查，並提供實際操作截圖；尚未進行出門清單應用本身的瀏覽器操作、重新載入保存及手機版面驗證。公開展示網址與 GitHub 原始碼網址待補。",
+    "lessonsLearned": "待補充",
+    "image": "assets/images/packing-checklist.png",
+    "imageAlt": "出門準備檢查助手的實際操作畫面，包含使用者分頁、情境清單、物品勾選與準備進度",
+    "demoUrl": "",
+    "githubUrl": "",
+    "status": "completed",
+    "featured": false,
+    "imageType": "screenshot"
+  }
+];
